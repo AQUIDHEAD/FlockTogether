@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  /* Water / background */
+  --color-water: #e6f4fc;
+  --color-water-deep: #b8dfef;
+
+  /* Neutral sticker outline & text */
+  --color-peat: #0e1d25;
+
+  /* Lily pad green */
+  --color-lilypad: #43664d;
+  --color-lilypad-light: #84a98c;
+
+  /* Mallard yellow CTA */
+  --color-mallard: #c49b35;
+  --color-mallard-deep: #473400;
+
+  /* Shore */
+  --color-grass: #6f9663;
+  --color-sand: #eed9a6;
+  --color-ivory: #fffdf7;
+
+  /* Fonts */
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
