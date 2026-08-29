@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import LillyPad from './components/Lilly-pad'
 
 function ShoreLine() {
   return (
@@ -63,6 +64,10 @@ export default function MainMenu() {
           <MenuButton bgClass="bg-ivory text-peat">How to Play</MenuButton>
         </div>
       </main>
+
+      <LillyPad className="absolute bottom-10 left-6 z-0 h-28 w-28 rotate-[-12deg] opacity-90" />
+      <LillyPad className="absolute bottom-24 right-4 z-0 h-36 w-36 rotate-[8deg]" />
+      <LillyPad className="absolute bottom-2 left-1/2 z-0 h-24 w-24 -translate-x-1/2 rotate-[15deg] opacity-80" />
     </div>
   )
 }
