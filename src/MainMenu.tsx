@@ -30,12 +30,14 @@ function ShoreLine() {
 type MenuButtonProps = {
   children: ReactNode
   bgClass?: string
+  onClick?: () => void
 }
 
-function MenuButton({ children, bgClass = 'bg-mallard text-mallard-deep' }: MenuButtonProps) {
+function MenuButton({ children, bgClass = 'bg-mallard text-mallard-deep', onClick }: MenuButtonProps) {
   return (
     <button
       type="button"
+      onClick={onClick}
       className={`${bgClass} w-full rounded-lg border-4 border-peat px-8 py-4 font-label text-sm font-bold uppercase tracking-[0.08em] shadow-[4px_4px_0_0_#0e1d25] transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[9px_9px_0_0_#0e1d25] active:translate-x-1 active:translate-y-1 active:shadow-none`}
     >
       {children}
@@ -43,7 +45,12 @@ function MenuButton({ children, bgClass = 'bg-mallard text-mallard-deep' }: Menu
   )
 }
 
-export default function MainMenu() {
+type MainMenuProps = {
+  /** Fired when the "Host Game" button is pressed, so the caller can open the host lobby. */
+  onHostGame?: () => void
+}
+
+export default function MainMenu({ onHostGame }: MainMenuProps = {}) {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-water to-water-deep font-body text-peat">
       <ShoreLine />
@@ -59,7 +66,7 @@ export default function MainMenu() {
         </p>
 
         <div className="flex w-64 flex-col gap-4 sm:w-72">
-          <MenuButton>Host Game</MenuButton>
+          <MenuButton onClick={onHostGame}>Host Game</MenuButton>
           <MenuButton bgClass="bg-lilypad text-white">Join Game</MenuButton>
           <MenuButton bgClass="bg-ivory text-peat">How to Play</MenuButton>
         </div>
